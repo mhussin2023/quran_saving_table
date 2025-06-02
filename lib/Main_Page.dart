@@ -73,8 +73,10 @@ class _Main_PageState extends State<Main_Page> {
       appBar: AppBar(
         title: Center(
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('جدول المراجعة'),
+
+
               ChoiceChip(
                 label: Text('العرض فى عامود'),
                 onSelected: (value) {
@@ -84,6 +86,8 @@ class _Main_PageState extends State<Main_Page> {
                 },
                 selected: BoolStorage.listType,
               ),
+
+              Text('جدول المراجعة')
             ],
           ),
         ),
@@ -108,19 +112,18 @@ class _Main_PageState extends State<Main_Page> {
         child: Center(
           child:
 
+          !BoolStorage.listType?
           SingleChildScrollView(
-            child:
-            BoolStorage.listType?
-            Wrap(
+            child: Wrap(
               alignment: WrapAlignment.end,
               //shrinkWrap: true,
               children: r,
-            ):
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: r,
-            )
-
+            ),
+          ):
+          ListView(
+            //mainAxisAlignment: MainAxisAlignment.start,
+            shrinkWrap: true,
+            children: r,
           )
 
         ),
