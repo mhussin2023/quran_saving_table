@@ -36,12 +36,11 @@ class _Main_PageState extends State<Main_Page> {
 
     return Scaffold(
       appBar: getAppBar(refreshMainPage),
-      drawer: getDrawer(),
+      drawer: getDrawer(refreshMainPage),
       body: getBody(refreshMainPage)
     );
   }
 
-  void refreshMainPage() {
-    setState(() {});
-  }
+  void refreshMainPage() => setState(() {});
+
 }
