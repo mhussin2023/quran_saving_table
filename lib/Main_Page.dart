@@ -51,7 +51,8 @@ class _Main_PageState extends State<Main_Page> {
                 style: TextStyle(fontSize: 30),
               ),
 
-              CircleAvatar(
+              Transform.scale(
+                scale: 1.5,
                 child: Checkbox(
                   value: BoolStorage.checkStatus[i],
                   shape: CircleBorder(),
@@ -114,10 +115,13 @@ class _Main_PageState extends State<Main_Page> {
 
           !BoolStorage.listType?
           SingleChildScrollView(
-            child: Wrap(
-              alignment: WrapAlignment.end,
-              //shrinkWrap: true,
-              children: r,
+            child: Directionality(
+              textDirection: TextDirection.rtl,
+              child: Wrap(
+                alignment: WrapAlignment.spaceBetween,
+                //shrinkWrap: true,
+                children: r,
+              ),
             ),
           ):
           ListView(
