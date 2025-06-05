@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class BoolStorage {
+class DataStorage {
   static const String key = "boolList";
   static bool listType=false;
   static List<bool> checkStatus_initialValue = List.filled(114, false);
