@@ -1,34 +1,30 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:quran_saving_table/storage_modules.dart';
+import 'package:quran_saving_table/dashBoardPage/dashBoardPage.dart';
 
-AppBar getAppBar(Function refreshMainPage){
- return AppBar(
+AppBar getAppBar(Function refreshMainPage,BuildContext context) {
+  return AppBar(
     title: Center(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // ChoiceChip(
-          //   label: Text('العرض فى عامود'),
-          //   onSelected: (value) {
-          //
-          //       DataStorage.listType = value;
-          //     refreshMainPage();
-          //   },
-          //   selected: DataStorage.listType,
-          // ),
-          Center(child: Text('جدول المراجعة'))
-        ],
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [Center(child: Text('جدول المراجعة'))],
       ),
     ),
-   // leading:
+     leading: IconButton(onPressed: () {
+       Navigator.push(
+         context,
+         MaterialPageRoute(builder: (context) =>  DashBoardPage(refreshMainPage: refreshMainPage,)),
+       );
+     },
+       icon: Icon(Icons.menu)),
     actions: [
-     IconButton(
-     onPressed: () async {
-   await DataStorage.saveBoolList();
- },
-  icon: Icon(Icons.save),
-  ),
+      IconButton(
+        onPressed: () async {
+          await DataStorage.saveBoolList();
+        },
+        icon: Icon(Icons.save),
+      ),
       IconButton(
         onPressed: () async {
           await DataStorage.saveBoolList();

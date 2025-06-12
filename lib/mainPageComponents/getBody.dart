@@ -6,20 +6,18 @@ Widget getBody(Function refreshMainPage) {
   const List<Color> colorList = [Colors.yellowAccent, Colors.cyan];
   const List<int> separators = [9, 20, 60];
 
-  List<Widget> r=[];
+  List<Widget> r=<Widget>[];
 
   r.clear();
     for (int i = 0; i < 114; i++) {
-
-
-      Widget txt = Text(
+      Widget txtSuraName = Text(
         quran.getSurahNameArabic(i + 1),
         textAlign: TextAlign.center,
         textDirection: TextDirection.rtl,
-        style: TextStyle(fontSize: 30),
+        style: TextStyle(fontSize: 28),
       );
 
-      Widget trans = Transform.scale(
+      Widget chkChecked = Transform.scale(
         scale: 1.5,
         child: Checkbox(
           value: DataStorage.checkStatus[i],
@@ -38,7 +36,8 @@ if(DataStorage.listType==true){
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            txt, trans
+            //SizedBox(width: 24) ,
+            txtSuraName,    chkChecked
           ],
         ),
       ),
@@ -48,14 +47,16 @@ if(DataStorage.listType==true){
     else {
   r.add(Card(
     color: colorList[i % 2],
-    child: Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        trans, txt
-      ],
+    child:
+       Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          chkChecked, txtSuraName,SizedBox(width: 4)
+        ],
+      ),
     ),
-  ));
+  );
 
 }
     }

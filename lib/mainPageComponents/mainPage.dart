@@ -24,23 +24,20 @@ class _Main_PageState extends State<Main_Page> {
   Widget build(BuildContext context) {
     DataStorage.builCounter++;
     print("build number ${DataStorage.builCounter}");
-
+  print("length is ${DataStorage.checkStatus.length}");
 
     if (DataStorage.checkStatus.length != 114) {
       return Container();
     }
 
-
-
-    //var r=quran.getSurahName(1);
-
     return Scaffold(
-      appBar: getAppBar(refreshMainPage),
-      drawer: getDrawer(refreshMainPage),
+      appBar: getAppBar(refreshMainPage,context),
+      //drawer: getDrawer(refreshMainPage,goBack,context),
       body: getBody(refreshMainPage)
     );
   }
 
   void refreshMainPage() => setState(() {});
+  void goBack()=>Navigator.pop(context);
 
 }
