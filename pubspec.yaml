@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^5.0.0
   shared_preferences: ^2.5.3
   choice: ^2.3.2
+  icons_plus: ^5.0.0
 
 dev_dependencies:
   flutter_test:

@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
 class dialogClass {
-  final BuildContext context;
-  dialogClass(this.context);
+  //final BuildContext context2;
+  //dialogClass();
 
-  static  showAlertDialog(BuildContext context) {
+    showAlertDialog(BuildContext context) {
+    print('dialog called');
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        print('started dialog');
         return AlertDialog(
           title: Text(
               textAlign: TextAlign.center,
               'رجاء التأكيد'),
           content: Text(
             textAlign: TextAlign.center,
-              'هل تريد حفظ بيانات الختمة'),
+              'هل تريد حذف بيانات الختمة'),
           actionsAlignment: MainAxisAlignment.center,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),

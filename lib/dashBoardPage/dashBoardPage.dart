@@ -1,6 +1,10 @@
+import 'dart:math';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../storage_modules.dart';
+import '../mainPageComponents/AlertDialoge.dart';
 
 class DashBoardPage extends StatefulWidget {
   const DashBoardPage({super.key, required this.refreshMainPage});
@@ -11,8 +15,10 @@ class DashBoardPage extends StatefulWidget {
 }
 
 class _DashBoardPageState extends State<DashBoardPage> {
+
   @override
   Widget build(BuildContext context) {
+    print('draw dash board');
     var smallSpace = SizedBox(height: 30,);
     return Scaffold(
       appBar: AppBar(
@@ -43,13 +49,21 @@ class _DashBoardPageState extends State<DashBoardPage> {
             ),
           ),
           smallSpace,
-          ElevatedButton(onPressed: () {
-            DataStorage.clearStatusList();
-            widget.refreshMainPage();
-            goBack();
-          },
-              child: Text("بدء ختمة جديدة"))
-          ,
+          // ElevatedButton(onPressed: ()async  {
+          //   print('started dialog');
+          //   //showAlertDialog();
+          //   String? x=await callDialogMethod(context);
+          //   print(x);
+          //
+          //   if(x=='OK'){DataStorage.clearStatusList();
+          //   widget.refreshMainPage();
+          //          }
+          //   goBack();
+          //  // ;
+          //   //
+          // },
+             // child: Text("بدء ختمة جديدة"))
+
           smallSpace,
           ElevatedButton(onPressed: () async {
             // String? feedback=dialogClass.showAlertDialog(context);
@@ -63,6 +77,44 @@ class _DashBoardPageState extends State<DashBoardPage> {
       ),
     );
   }
+
+  // Future<String?> callDialogMethod(BuildContext context) async{
+  //   return await showDialog<String>(
+  //       context: context,
+  //       builder: (BuildContext context) {
+  //         Size size=MediaQuery.of(context).size;
+  //          return AlertDialog(
+  //           content: SizedBox(
+  //             width: size.width*0.8,
+  //             height:  max(size.height*0.1,60),
+  //             child: Column(
+  //               children: [
+  //                 Text('fff'),
+  //                 SizedBox(width: 10,height: 10),
+  //                 Row(
+  //                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //                   children: [
+  //                   ElevatedButton(onPressed: (){
+  //
+  //                     print('OK');
+  //                     Navigator.pop(context,'OK');
+  //
+  //                   },
+  //                       child: Text('موافق')),
+  //                   ElevatedButton(onPressed: (){
+  //
+  //                     print('Cancel');
+  //                     Navigator.pop(context,'Cancel');
+  //                   }, child: Text('زفض'))
+  //                 ],)
+  //               ],
+  //             ),
+  //           ),
+  //         );
+  //       }
+  //
+  //   );
+  // }
 
   void goBack() {
     Navigator.pop(context);
@@ -91,13 +143,10 @@ class _DashBoardPageState extends State<DashBoardPage> {
     return _fileName;
   }
 
+
+
+
+
+
 }
 
-  // void refreshMainPage() {
-  //   setState(() {
-  //
-  //   });
-
-
-
-//}
