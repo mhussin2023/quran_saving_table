@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran/quran.dart' as quran;
-import 'package:quran_saving_table/storage_modules.dart';
+import 'package:quran_saving_table/GeneralMethods/storage_modules.dart';
 
 Widget getBody(Function refreshMainPage) {
   const List<Color> colorList = [Colors.yellowAccent, Colors.cyan];

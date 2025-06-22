@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quran/quran.dart' as quran;
 import 'package:quran_saving_table/mainPageComponents/sideDrawer.dart';
 import 'package:quran_saving_table/mainPageComponents/topAppBar.dart';
-import 'package:quran_saving_table/storage_modules.dart';
+import 'package:quran_saving_table/GeneralMethods/storage_modules.dart';
 import 'getBody.dart';
 
 class Main_Page extends StatefulWidget {

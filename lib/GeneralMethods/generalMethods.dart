@@ -11,11 +11,14 @@ Future<String?> callDialogMethod(BuildContext context) async{
         return AlertDialog(
           content: SizedBox(
             width: size.width*0.8,
-            height:  max(size.height*0.1,60),
+            height:  size.height*0.15,
             child: Column(
               children: [
-                Text('هل حقا تريد محو بيانات الختمة'),
-                SizedBox(width: 10,height: 10),
+                Text(
+                    style: TextStyle(fontSize: 20)
+                    ,
+                    'هل حقا تريد محو بيانات الختمة'),
+                SizedBox(width: 10,height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [ ElevatedButton(onPressed: (){

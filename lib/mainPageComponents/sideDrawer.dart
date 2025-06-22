@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../storage_modules.dart';
-import 'AlertDialoge.dart';
+import '../GeneralMethods/storage_modules.dart';
+//import '../dashBoardPage/AlertDialoge.dart';
 //
 //
 // Drawer getDrawer(Function refreshMainPage,Function goBack,BuildContext context){
