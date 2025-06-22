@@ -2,9 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:quran_saving_table/GeneralMethods/storage_modules.dart';
 import 'package:icons_plus/icons_plus.dart';
+import '../GeneralMethods/dialogMethod.dart';
 
-import '../GeneralMethods/generalMethods.dart';
-import '../Rubbish/dashBoardPage.dart';
 
 AppBar getAppBar(Function refreshMainPage,BuildContext context) {
   return AppBar(
@@ -14,13 +13,7 @@ AppBar getAppBar(Function refreshMainPage,BuildContext context) {
         children: [Center(child: Text('جدول المراجعة'))],
       ),
     ),
-     // leading: IconButton(onPressed: () {
-     //   Navigator.push(
-     //     context,
-     //     MaterialPageRoute(builder: (context) =>  DashBoardPage(refreshMainPage: refreshMainPage,)),
-     //   );
-     // },
-     //   icon: Icon(Icons.menu)),
+
     actions: [
       IconButton(
         onPressed: () async {

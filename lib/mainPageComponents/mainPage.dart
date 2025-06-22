@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quran/quran.dart' as quran;
-import 'package:quran_saving_table/mainPageComponents/sideDrawer.dart';
 import 'package:quran_saving_table/mainPageComponents/topAppBar.dart';
 import 'package:quran_saving_table/GeneralMethods/storage_modules.dart';
 import 'getBody.dart';
@@ -32,7 +30,6 @@ class _Main_PageState extends State<Main_Page> {
 
     return Scaffold(
       appBar: getAppBar(refreshMainPage,context),
-      //drawer: getDrawer(refreshMainPage,goBack,context),
       body: getBody(refreshMainPage)
     );
   }

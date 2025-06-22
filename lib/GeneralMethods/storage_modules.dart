@@ -62,9 +62,5 @@ class DataStorage {
     File newFile=File(fileFullName);
     await newFile.writeAsString(checkStatus.toString());
     print('finished saving data');
-
-
-
-
   }
 }

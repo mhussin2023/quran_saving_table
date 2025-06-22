@@ -8,7 +8,6 @@ Widget getBody(Function refreshMainPage) {
 
   List<Widget> r = <Widget>[];
   List<Widget> myRow = [];
-  //SizedBox(width: 24) ,
 
   r.clear();
   for (int i = 0; i < 114; i++) {
@@ -43,8 +42,6 @@ Widget getBody(Function refreshMainPage) {
             DataStorage.listType ? myRow : myRow.reversed.toList()
         )));
   }
-// 67-84-08-618;
-
 
     return SafeArea(
       child: Center(
