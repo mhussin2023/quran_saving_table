@@ -10,6 +10,7 @@ Widget getBody(Function refreshMainPage) {
   List<Widget> myRow = [];
 
   r.clear();
+
   for (int i = 0; i < 114; i++) {
     Widget txtSuraName = Text(
       quran.getSurahNameArabic(i + 1),
@@ -44,6 +45,7 @@ Widget getBody(Function refreshMainPage) {
   }
 
     return SafeArea(
+      minimum: EdgeInsets.all(10),
       child: Center(
         child: !DataStorage.listType
             ? SingleChildScrollView(
