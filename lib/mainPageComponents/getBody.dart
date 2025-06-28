@@ -12,11 +12,17 @@ Widget getBody(Function refreshMainPage) {
   r.clear();
 
   for (int i = 0; i < 114; i++) {
-    Widget txtSuraName = Text(
-      quran.getSurahNameArabic(i + 1),
-      textAlign: TextAlign.center,
-      textDirection: TextDirection.rtl,
-      style: TextStyle(fontSize: 28),
+    Widget txtSuraName = GestureDetector(
+      onTap: () {
+        DataStorage.checkStatus[i] = !DataStorage.checkStatus[i];
+        refreshMainPage();
+      },
+      child: Text(
+        quran.getSurahNameArabic(i + 1),
+        textAlign: TextAlign.center,
+        textDirection: TextDirection.rtl,
+        style: TextStyle(fontSize: 28),
+      ),
     );
 
     Widget chkChecked = Transform.scale(
@@ -34,14 +40,21 @@ Widget getBody(Function refreshMainPage) {
     ];
 
 
-    r.add(Card(
-        color: colorList[i % 2],
-        child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children:
-            DataStorage.listType ? myRow : myRow.reversed.toList()
-        )));
+    r.add(
+        GestureDetector(
+          onTap: () {
+            DataStorage.checkStatus[i] =  !DataStorage.checkStatus[i];
+            refreshMainPage();
+          },
+          child: Card(
+          color: colorList[i % 2],
+          child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children:
+              DataStorage.listType ? myRow : myRow.reversed.toList()
+          )),
+        ));
   }
 
     return SafeArea(
